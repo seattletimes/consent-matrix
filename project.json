@@ -1,0 +1,20 @@
+{
+  "s3": {
+    "stage": {
+      "bucket": "projects-staging.seattletimes.com",
+      "path": "carnivorous-cashew"
+    },
+    "live": {
+      "bucket": "projects.seattletimes.com",
+      "path": ""
+    }
+  },
+  "title": "",
+  "description": "",
+  "url": "",
+  "image": "assets/social.jpg",
+  "sheets": ["1cI_-4L4mgvu5MVvUFFx_UHoPVUTi5_3D5B39TrRjRCY"],
+  "standout": false,
+  "embedded": true,
+  "production": false
+}

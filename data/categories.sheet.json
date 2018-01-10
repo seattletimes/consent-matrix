@@ -1,0 +1,34 @@
+[
+  {
+    "short": "friend",
+    "long": "From a friend"
+  },
+  {
+    "short": "family",
+    "long": "From a parent or family member"
+  },
+  {
+    "short": "school",
+    "long": "In school"
+  },
+  {
+    "short": "elsewhere",
+    "long": "Somewhere else"
+  },
+  {
+    "short": "never",
+    "long": "I never learned about consent"
+  },
+  {
+    "short": "child",
+    "long": "12 or younger"
+  },
+  {
+    "short": "teen",
+    "long": "13-18 years old"
+  },
+  {
+    "short": "adult",
+    "long": "As an adult"
+  }
+]
