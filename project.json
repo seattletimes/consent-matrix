@@ -6,7 +6,7 @@
     },
     "live": {
       "bucket": "projects.seattletimes.com",
-      "path": ""
+      "path": "2018/local/consent-responses"
     }
   },
   "title": "",
@@ -16,5 +16,5 @@
   "sheets": ["1cI_-4L4mgvu5MVvUFFx_UHoPVUTi5_3D5B39TrRjRCY"],
   "standout": false,
   "embedded": true,
-  "production": false
+  "production": true
 }

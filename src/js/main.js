@@ -11,6 +11,8 @@ var matrix = $.one(".matrix");
 var key = $.one(".key");
 var detail = $.one(".detail");
 
+var head = require("../assets/head.svg");//.replace(/\<(\?|!--).*?(\?|--)\>/g, "");
+
 var { responses, categories, questions } = window.consent;
 
 var groups = {
@@ -48,10 +50,10 @@ var palette = [colors.palette.stDarkBlue, colors.palette.stDarkGreen, colors.pal
 var onClick = function(e) {
   var index = this.getAttribute("data-index");
   var r = responses[index];
+  var tag = [(r.name || "Anonymous").trim(), r.age].filter(d => d).join(", ");
   detail.innerHTML = `
-<h1>${r.name || "Anonymous"}</h1>
-<h2>Age: ${r.age ? r.age : "Not provided"}</h2>
-<h2>Occupation: ${r.occupation ? r.occupation : "Not provided"}</h2>
+<h1>${tag}</h1>
+<h2>${r.occupation || ""}</h2>
 <ul class="answers">
 ${["meaning", "teaching"].map(q => {
   if (!r[q]) return "";
@@ -70,6 +72,7 @@ responses.forEach(function(r, i) {
   element.className = "response";
   element.setAttribute("data-index", i);
   element.addEventListener("click", onClick);
+  // element.innerHTML = head;
 });
 
 var groupSelect = $.one(".group-by");
@@ -86,7 +89,7 @@ var onChange = function() {
     matrix.appendChild(div);
     containers[g] = div;
   });
-  key.innerHTML = groups[not].map(function(g, i) {
+  key.innerHTML = `<h2>Coloring: ${questions[not].question}</h2>` + groups[not].map(function(g, i) {
     var color = g == "never" ? colors.palette.dfLightGray : palette[i];
     return `<span class="key-item">
       <div class="response" style="background: ${color}"></div>
