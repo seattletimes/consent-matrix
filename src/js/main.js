@@ -11,8 +11,6 @@ var matrix = $.one(".matrix");
 var key = $.one(".key");
 var detail = $.one(".detail");
 
-var head = require("../assets/head.svg");//.replace(/\<(\?|!--).*?(\?|--)\>/g, "");
-
 var { responses, categories, questions } = window.consent;
 
 var groups = {
@@ -89,7 +87,11 @@ var onChange = function() {
     matrix.appendChild(div);
     containers[g] = div;
   });
-  key.innerHTML = `<h2>Coloring: ${questions[not].question}</h2>` + groups[not].map(function(g, i) {
+  var alts = {
+    old: "Age the person learned about consent:",
+    how: "Where the reader learned about consent:"
+  }
+  key.innerHTML = `<h2 class="secondary">${alts[not]}</h2>` + groups[not].map(function(g, i) {
     var color = g == "never" ? colors.palette.dfLightGray : palette[i];
     return `<span class="key-item">
       <div class="response" style="background: ${color}"></div>
